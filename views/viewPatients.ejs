@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/navBar.ejs") %>
+
+<style>
+    .table {
+        display: flex;
+        justify-content: center;
+        margin-top: 3%;
+    }
+    
+
+</style>
+
+<div class="container">
+<table class="table table-bordered">
+    <tr>
+        <th>Full Name</th>
+        <th>Phone Number</th>
+        <th>Email Address</th>
+        <th>Date of birth</th>
+        <th>Actions</th>
+    </tr>
+    <% patients.forEach(patient=> { %>
+        <tr>  
+            <td><%= patient.fullname %></td>
+            <td><%= patient.contactNumber %></td>
+            <td><%= patient.emailaddress %></td>
+            <td><%= patient.dateOfBirth %></td>
+            <td col="4">
+                <form action="/updatePatientView/<%=patient.id%>" method="GET"  style="display:inline-block">            
+                    <button type="submit" class="btn btn-primary">View</button>
+                </form> 
+                <form action="/deletePatient/<%=patient.id%>" method="POST"  style="display:inline-block">            
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>                 
+            </td>
+        </tr>
+    <% });%>
+</table>
+<a href="/addPatient" class="btn btn-primary">Add Patient</a>
+</div> 
+<%- include('partials/footer') %>

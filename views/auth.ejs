@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+
+
+<style>
+    .body {
+        background: linear-gradient(135deg, #fcfcfc, #5959f0);
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .welcome-text {
+        font-size: 1.5rem;
+        color: black;
+        margin-top: 20px;
+    }
+    .icon {
+        color: #fff;
+    }
+    .jumbotron {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+    .bold-text {
+            font-weight: bold;
+            color: blue;
+        }
+
+</style>
+</head>
+<body class="body">
+
+<div class="center">
+<div class="container text-center">
+    <div class="jumbotron">
+        <i class="fas fa-key fa-6x icon"></i>
+        <h1 class="display-3 bold-text">Patient App</h1>
+        <p class="welcome-text">Welcome to the Patient App!</p>
+        <hr>
+        <a class="btn btn-light btn-lg" href="/register" role="button">Register</a>
+        <a class="btn btn-primary btn-lg" href="/login" role="button">Login</a>    
+    </div>
+</div>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,58 @@
+<%- include("partials/header.ejs") %>
+<%- include("partials/navBar.ejs") %>
+
+<style>
+  .bold-text {
+      font-weight:500;
+      color: blue;
+  }
+</style>
+
+<div class="container">
+  <form action="/updatePatient/<%=patient.id%>" method="POST" class="px-4 py-3">
+    <h2 class="mb-4 bold-text">Patient Information</h2>
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="fullname" class="form-label bold-text">Full Name</label>
+          <input type="text" class="form-control"  value="<%=patient.fullname%>" id="fullname" name="fullname" placeholder="Enter full name">
+        </div>    
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="emailaddress" class="form-label bold-text">Email address</label>
+          <input type="email" class="form-control" value="<%=patient.emailaddress%>" id="emailaddress" name="emailaddress" placeholder="Enter email address">
+        </div>    
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="mb-3">
+          <label for="birthdate" class="form-label bold-text">Date of birth</label>
+          <input type="datetime" class="form-control" value="<%=patient.dateOfBirth%>" id="birthdate" name="birthdate" placeholder="Enter date of birth">
+        </div>    
+      </div>
+      <div class="col">
+        <div class="mb-3">
+          <label for="contact" class="form-label bold-text">Contact number</label>
+          <input type="tel" class="form-control" value="<%=patient.contactNumber%>" id="contact" name="contact" placeholder="Enter contact number">
+        </div>    
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="lastDoctorVisit" class="form-label bold-text">Last Doctor visit</label>
+      <input type="datetime" class="form-control" value="<%=patient.lastDoctorVisit%>" id="lastDoctorVisit" name="lastDoctorVisit" placeholder="Select last Doctor visit">
+    </div>
+    <div class="mb-3">
+      <label for="illness" class="form-label bold-text">Illness description</label>
+      <input type="text" class="form-control" value="<%=patient.illnessDescription%>" id="illness" name="illness" placeholder="Enter description">
+    </div>
+    <div class="mb-3">
+      <label for="doctorname" class="form-label bold-text">Doctor's Name/ Office</label>
+      <input type="text" class="form-control" value="<%=patient.doctorName%>" id="doctorname" name="doctorname" placeholder="Enter name/office">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Patient</button>
+  </form>
+</div> 
+<%- include('partials/footer') %>
